@@ -16,7 +16,7 @@ def error(word):
 
 #defining the animation
 def the_process_function():
-    n = 20
+    n = 5
     for i in range(n):
         time.sleep(1)
         sys.stdout.write('\r'+'searching... \t process '+str(i)+'/'+str(n)+' '+ '{:.2f}'.format(i/n*100)+'%')
