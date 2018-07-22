@@ -1,0 +1,1 @@
+COMLID is a Command Line based Dictionary cum Translator.
