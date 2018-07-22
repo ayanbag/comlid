@@ -15,18 +15,18 @@ def error(word):
         print("Please enter a valid word ")
 
 #defining the animation
-def the_process_function(x="searching"):
-    n = 5
+def the_process_function():
+    n = 20
     for i in range(n):
         time.sleep(1)
-        sys.stdout.write('\r'+x+'...'+ '\t process '+str(i)+'/'+str(n)+' '+ '{:.2f}'.format(i/n*100)+'%')
+        sys.stdout.write('\r'+'searching... \t process '+str(i)+'/'+str(n)+' '+ '{:.2f}'.format(i/n*100)+'%')
         sys.stdout.flush()
-    sys.stdout.write('\r'+x+'... finished               \n')
+    sys.stdout.write('\r'+'searching... finished               \n')
 
-def animated_loading(x="searching"):
+def animated_loading():
     chars = "/—\|" 
     for char in chars:
-        sys.stdout.write('\r'+x+'...'+char)
+        sys.stdout.write('\r'+'searching...'+char)
         time.sleep(.1)
         sys.stdout.flush() 
 
@@ -122,7 +122,7 @@ if(answers1["Choose"]=='dictionary'):
     #triggering the animation
     the_process.start()
     while the_process.isAlive():
-         animated_loading(x="searching")
+         animated_loading()
     
     word=data['results'][0]['id']
     lang=data['results'][0]['language']
@@ -194,7 +194,7 @@ questions4=[
         'type': 'list',
         'name': 'toBeExit',
         'message': 'Do you want to exit? ',
-        'choices':['Yes','No']
+        'choices':['Yes']
        
     }
 ]
