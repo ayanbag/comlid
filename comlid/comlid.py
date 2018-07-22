@@ -176,11 +176,6 @@ elif(answers1["Choose"]=='translator'):
     
     data1=r.json()
 
-    #triggering the animation
-    
-    the_process.start(x="translating")
-    while the_process.isAlive():
-         animated_loading(x="translating")
     
     trans=data1['results'][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["subsenses"][0]["translations"][0]["text"][0:]
 
