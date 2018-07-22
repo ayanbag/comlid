@@ -15,18 +15,18 @@ def error(word):
         print("Please enter a valid word ")
 
 #defining the animation
-def the_process_function():
-    n = 20
+def the_process_function(x="searching"):
+    n = 5
     for i in range(n):
         time.sleep(1)
-        sys.stdout.write('\r'+'searching...'+ '\t process '+str(i)+'/'+str(n)+' '+ '{:.2f}'.format(i/n*100)+'%')
+        sys.stdout.write('\r'+x+'...'+ '\t process '+str(i)+'/'+str(n)+' '+ '{:.2f}'.format(i/n*100)+'%')
         sys.stdout.flush()
-    sys.stdout.write('\r'+'searching... finished               \n')
+    sys.stdout.write('\r'+x+'... finished               \n')
 
-def animated_loading():
+def animated_loading(x="searching"):
     chars = "/—\|" 
     for char in chars:
-        sys.stdout.write('\r'+'searching...'+char)
+        sys.stdout.write('\r'+x+'...'+char)
         time.sleep(.1)
         sys.stdout.flush() 
 
@@ -122,7 +122,7 @@ if(answers1["Choose"]=='dictionary'):
     #triggering the animation
     the_process.start()
     while the_process.isAlive():
-         animated_loading()
+         animated_loading(x="searching")
     
     word=data['results'][0]['id']
     lang=data['results'][0]['language']
@@ -151,14 +151,14 @@ elif(answers1["Choose"]=='translator'):
             'type':'list',
             'name':'cho1',
             'message':'Source Language: ',
-            'choices':['en','es','nso','zu','ms','id','tn','ur','de','pt'],
+            'choices':['en','es','ms','id','tn','ur','de','pt'],
             'default':'en'
         },
         {
             'type':'list',
             'name':'cho2',
             'message':'Target Language: ',
-            'choices':['en','es','nso','zu','ms','id','tn','ur','de','pt'],
+            'choices':['en','es','ms','id','tn','ur','de','pt'],
             'default':'en'
         }
     ]
@@ -175,6 +175,12 @@ elif(answers1["Choose"]=='translator'):
     r = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
     
     data1=r.json()
+
+    #triggering the animation
+    
+    the_process.start(x="translating")
+    while the_process.isAlive():
+         animated_loading(x="translating")
     
     trans=data1['results'][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["subsenses"][0]["translations"][0]["text"][0:]
 
