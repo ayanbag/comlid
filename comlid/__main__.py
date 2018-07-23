@@ -69,7 +69,7 @@ def intro():
     print(f.renderText("COMLID"))
     print(" ")
     prRed("WELCOME TO COMLID ")
-    prLightPurple("Version = 1.0.0")
+    prLightPurple("Version = 0.0")
     prLightGray("Powered By Oxford Dictionary")
 
     print(" ")
