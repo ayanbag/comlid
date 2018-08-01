@@ -57,8 +57,8 @@ style = style_from_dict({
 
 
 #App Login and API Keys Credential
-app_id='c2d464e1'
-app_key='89616b9e14d443bcdb7227e28d8287cf'
+app_id='xxxxxx'
+app_key='xxxxxxxxxxxxxxxxxxxxxxxx'
 
 #For Pyliget
 f=Figlet("small")
