@@ -11,7 +11,7 @@ setuptools.setup(
     description="A Command Line based Dictionary cum Translator",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ayanbag/CLI_Dictionary",
+    url="https://github.com/ayanbag/comlid",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
@@ -20,9 +20,9 @@ setuptools.setup(
     ),
     entry_points={
         'console_script':[
-            'comlid=comlid.comlid:main'
+            'run_comlid = comlid.__main__:main'
 
-        ]
+        ],
     }
     
 )
